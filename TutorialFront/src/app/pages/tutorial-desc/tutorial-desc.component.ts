@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Tutorial } from 'src/app/models/tutorial';
+import { TutorialService } from 'src/app/services/tutorial.service';
 
 @Component({
   selector: 'app-tutorial-desc',
@@ -7,7 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TutorialDescComponent implements OnInit {
 
-  constructor() { }
+  tutorials: Tutorial[];
+  @Input() tutorial: Tutorial = new Tutorial;
+  tutorialID: number;
+
+  constructor(public tutorialService: TutorialService, route: ActivatedRoute) {
+    this.tutorials = tutorialService.getTutorials();
+    this.tutorialID = parseInt(route.snapshot.paramMap.get('id')!);
+  }
+  
+  editTutorial(){
+    this.tutorialService.editTutorial(this.tutorial);
+    this.tutorial = this.tutorialService.getTutorial(this.tutorial.id);
+  }
+
+  deleteTutorial(){
+    this.tutorialService.deleteTutorial(this.tutorial);
+  }
+
 
   ngOnInit(): void {
   }

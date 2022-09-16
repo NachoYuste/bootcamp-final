@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Tutorial } from 'src/app/models/tutorial';
+import { TutorialService } from 'src/app/services/tutorial.service';
 
 @Component({
   selector: 'app-tutorial-list',
@@ -7,8 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TutorialListComponent implements OnInit {
 
-  constructor() { }
+  tutorials: Tutorial[];
+  tutorial: Tutorial = new Tutorial();
 
+  constructor(public tutorialService: TutorialService) {
+    this.tutorials = tutorialService.getTutorials();
+  }
+
+  addTutorial(){
+    //Add tutorial
+    this.tutorialService.addTutorial(this.tutorial);
+    this.tutorials = this.tutorialService.getTutorials();
+  }
+  
   ngOnInit(): void {
   }
 
