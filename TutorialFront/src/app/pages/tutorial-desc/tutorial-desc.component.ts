@@ -17,9 +17,11 @@ export class TutorialDescComponent implements OnInit {
   constructor(public tutorialService: TutorialService, route: ActivatedRoute) {
     this.tutorials = tutorialService.getTutorials();
     this.tutorialID = parseInt(route.snapshot.paramMap.get('id')!);
+  }
   
   editTutorial(){
-    this.tutorial = this.tutorialService.editStudent(this.tutorial);
+    this.tutorialService.editTutorial(this.tutorial);
+    this.tutorial = this.tutorialService.getTutorial(this.tutorial.id);
   }
 
   deleteTutorial(){
