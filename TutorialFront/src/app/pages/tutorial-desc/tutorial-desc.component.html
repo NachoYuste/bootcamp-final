@@ -1,8 +1,17 @@
-<div class="text-center">
-    <img src="https://videopopular.es/wp-content/uploads/2021/01/videotutorial-1.jpg" class="card-img-top" style="width: 36rem;">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<br>
+<div class="p-3">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <app-edit-modal></app-edit-modal>
+        <button class="btn btn-danger" type="button" (click)="deleteTutorial()">Eliminar</button>
     </div>
-  </div>
+    <div class="text-center">
+        <img src= {{ tutorial.img }} class="card-img-top" style="width: 36rem;">
+        <br>
+        <div class="card-body">
+            <br>
+            <h5 class="card-title">{{ tutorial.title }}</h5>
+            <p class="card-text">{{ tutorial.description }}</p>
+            <p class="card-text"><small class="text-muted">Publicado</small></p>
+        </div>
+    </div>
+</div>
