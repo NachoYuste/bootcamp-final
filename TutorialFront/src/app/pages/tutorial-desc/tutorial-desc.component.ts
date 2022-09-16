@@ -12,17 +12,8 @@ export class TutorialDescComponent implements OnInit {
 
   tutorials: Tutorial[] = [];
   @Input() tutorial: Tutorial = new Tutorial;
-  tutorialID: number;
 
-  constructor(public tutorialService: TutorialService, route: ActivatedRoute) {
-   // this.tutorials = tutorialService.getTutorials();
-    this.tutorialID = parseInt(route.snapshot.paramMap.get('id')!);
-  }
-
-  deleteTutorial(){
-    this.tutorialService.deleteTutorial(this.tutorial);
-  }
-
+  constructor(public tutorialService: TutorialService) {}
 
   ngOnInit(): void {
   }

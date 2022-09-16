@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Tutorial } from 'src/app/models/tutorial';
 import { TutorialService } from 'src/app/services/tutorial.service';
 
@@ -9,9 +10,9 @@ import { TutorialService } from 'src/app/services/tutorial.service';
 })
 export class EditModalComponent implements OnInit {
 
-  tutorial : Tutorial = new Tutorial();
+  @Input() tutorial : Tutorial = new Tutorial();
 
-  constructor(private tutorialService : TutorialService) { }
+  constructor(private tutorialService : TutorialService, route: ActivatedRoute) {}
 
   editTutorial(){
     this.tutorialService.editTutorial(this.tutorial).subscribe();
