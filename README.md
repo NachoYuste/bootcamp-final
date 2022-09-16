@@ -7,7 +7,7 @@
 - Fernando Lopez Reina
 - Salvador Raya Cuesta
 - Maru Suarez Rodriguez
-- Paco Vazquez Escobar
+- Paco Vazquez Escobar (En alma)
 
 
 ### Despliegue
