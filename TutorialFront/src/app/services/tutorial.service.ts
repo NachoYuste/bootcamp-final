@@ -11,19 +11,14 @@ export class TutorialService {
   tutorials: Tutorial[] = [];
   constructor(private http: HttpClient) { }
 
-  getTutorials(): Tutorial[]{
-    
-    this.http.get<Tutorial[]>('http://localhost8080/tutorials').subscribe(data => {
-      this.tutorials = data
-    })
-
-    return this.tutorials;
+  getTutorials(){
+    return this.http.get<any>('http://localhost:8080/tutorials')
   }
 
   getTutorial(id: number): Tutorial{
     let tutorial: Tutorial = new Tutorial();
     
-    this.http.get<Tutorial>('http://localhost8080/tutorials/{{id}}').subscribe(data =>{
+    this.http.get<Tutorial>('http://localhost:8080/tutorials/{{id}}').subscribe(data =>{
       tutorial = data;
     });
     
@@ -35,7 +30,7 @@ export class TutorialService {
                   "description":tutorial.description,
                   "published":tutorial.published,
                   "img":tutorial.img};
-    this.http.post('http://localhost8080/tutorials', body).subscribe();
+    this.http.post('http://localhost:8080/tutorials', body).subscribe();
   }
 
   editTutorial(tutorial: Tutorial){
@@ -43,11 +38,11 @@ export class TutorialService {
                   "description":tutorial.description,
                   "published":tutorial.published,
                   "img":tutorial.img};
-    this.http.put('http://localhost8080/tutorials/{{tutorial.id}}', body).subscribe();
+    this.http.put('http://localhost:8080/tutorials/{{tutorial.id}}', body).subscribe();
   }
 
   deleteTutorial(tutorial: Tutorial){
-    this.http.delete('http://localhost8080/tutorials/{{tutorial.id}}').subscribe()
+    this.http.delete('http://localhost:8080/tutorials/{{tutorial.id}}').subscribe()
   }
 
 

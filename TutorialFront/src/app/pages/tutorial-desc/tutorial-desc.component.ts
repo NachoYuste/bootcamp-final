@@ -10,18 +10,13 @@ import { TutorialService } from 'src/app/services/tutorial.service';
 })
 export class TutorialDescComponent implements OnInit {
 
-  tutorials: Tutorial[];
+  tutorials: Tutorial[] = [];
   @Input() tutorial: Tutorial = new Tutorial;
   tutorialID: number;
 
   constructor(public tutorialService: TutorialService, route: ActivatedRoute) {
-    this.tutorials = tutorialService.getTutorials();
+   // this.tutorials = tutorialService.getTutorials();
     this.tutorialID = parseInt(route.snapshot.paramMap.get('id')!);
-  }
-  
-  editTutorial(){
-    this.tutorialService.editTutorial(this.tutorial);
-    this.tutorial = this.tutorialService.getTutorial(this.tutorial.id);
   }
 
   deleteTutorial(){

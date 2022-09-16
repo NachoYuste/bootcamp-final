@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Tutorial } from 'src/app/models/tutorial';
+import { TutorialService } from 'src/app/services/tutorial.service';
 
 @Component({
   selector: 'app-edit-modal',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditModalComponent implements OnInit {
 
-  constructor() { }
+  tutorial : Tutorial = new Tutorial();
+
+  constructor(private tutorialService : TutorialService) { }
+
+  editTutorial(){
+    this.tutorialService.editTutorial(this.tutorial).subscribe();
+  }
 
   ngOnInit(): void {
   }
