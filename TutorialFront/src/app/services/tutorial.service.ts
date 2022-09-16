@@ -31,15 +31,23 @@ export class TutorialService {
   }
 
   addTutorial(tutorial: Tutorial){
-    const body = {"title":tutorial.title, }
+    const body = {"title":tutorial.title,
+                  "description":tutorial.description,
+                  "published":tutorial.published,
+                  "img":tutorial.img};
+    this.http.post('http://localhost8080/tutorials', body).subscribe();
   }
 
   editTutorial(tutorial: Tutorial){
-
+    const body = {"title":tutorial.title,
+                  "description":tutorial.description,
+                  "published":tutorial.published,
+                  "img":tutorial.img};
+    this.http.put('http://localhost8080/tutorials/{{tutorial.id}}', body).subscribe();
   }
 
   deleteTutorial(tutorial: Tutorial){
-    
+    this.http.delete('http://localhost8080/tutorials/{{tutorial.id}}').subscribe()
   }
 
 
