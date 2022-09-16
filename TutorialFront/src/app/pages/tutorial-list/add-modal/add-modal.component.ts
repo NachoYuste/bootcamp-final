@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Tutorial } from 'src/app/models/tutorial';
+import { TutorialService } from 'src/app/services/tutorial.service';
 
 @Component({
   selector: 'app-add-modal',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddModalComponent implements OnInit {
 
-  constructor() { }
+  @Input() tutorial: Tutorial = new Tutorial;
+  constructor(private tutorialService: TutorialService, route: ActivatedRoute) {}
+
+  addTutorial(){
+    //Add tutorial
+    this.tutorialService.addTutorial(this.tutorial).subscribe();
+  }
 
   ngOnInit(): void {
   }

@@ -12,6 +12,7 @@ export class TutorialDescComponent implements OnInit {
 
   tutorials: Tutorial[] = [];
   @Input() tutorial: Tutorial = new Tutorial;
+  tutorialID: number;
 
   constructor(public tutorialService: TutorialService) {}
 

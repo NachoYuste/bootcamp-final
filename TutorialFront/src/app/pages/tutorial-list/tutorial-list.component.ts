@@ -16,11 +16,7 @@ export class TutorialListComponent implements OnInit {
     //this.tutorials = tutorialService.getTutorials();
   }
 
-  addTutorial(){
-    //Add tutorial
-    this.tutorialService.addTutorial(this.tutorial);
-    //this.tutorials = this.tutorialService.getTutorials();
-  }
+  
   
   ngOnInit(): void {
   }
