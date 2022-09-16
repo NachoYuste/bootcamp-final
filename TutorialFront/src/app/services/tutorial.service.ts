@@ -8,21 +8,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TutorialService {
 
-  tutorials: Tutorial[] = [];
   constructor(private http: HttpClient) { }
 
   getTutorials(){
     return this.http.get<any>('http://localhost:8080/tutorials')
   }
 
-  getTutorial(id: number): Tutorial{
-    let tutorial: Tutorial = new Tutorial();
-    
-    this.http.get<Tutorial>('http://localhost:8080/tutorials/{{id}}').subscribe(data =>{
-      tutorial = data;
-    });
-    
-    return tutorial;
+  getTutorial(id: number){    
+    return this.http.get<Tutorial>('http://localhost:8080/tutorials/{{id}}')
   }
 
   addTutorial(tutorial: Tutorial){
@@ -30,7 +23,7 @@ export class TutorialService {
                   "description":tutorial.description,
                   "published":tutorial.published,
                   "img":tutorial.img};
-    this.http.post('http://localhost:8080/tutorials', body).subscribe();
+    return this.http.post('http://localhost:8080/tutorials', body);
   }
 
   editTutorial(tutorial: Tutorial){
@@ -38,11 +31,11 @@ export class TutorialService {
                   "description":tutorial.description,
                   "published":tutorial.published,
                   "img":tutorial.img};
-    this.http.put('http://localhost:8080/tutorials/{{tutorial.id}}', body).subscribe();
+    return this.http.put('http://localhost:8080/tutorials/{{tutorial.id}}', body);
   }
 
   deleteTutorial(tutorial: Tutorial){
-    this.http.delete('http://localhost:8080/tutorials/{{tutorial.id}}').subscribe()
+    return this.http.delete('http://localhost:8080/tutorials/{{tutorial.id}}')
   }
 
 
