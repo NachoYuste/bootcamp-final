@@ -16,6 +16,10 @@ export class TutorialDescComponent implements OnInit {
 
   constructor(public tutorialService: TutorialService) {}
 
+  deleteTutorial(){
+    this.tutorialService.deleteTutorial(this.tutorial).subscribe();
+  }
+
   ngOnInit(): void {
   }
 
