@@ -10,6 +10,7 @@ import { TutorialDescComponent } from './pages/tutorial-desc/tutorial-desc.compo
 import { EditModalComponent } from './pages/tutorial-desc/edit-modal/edit-modal.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TutorialDescComponent,
     EditModalComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
