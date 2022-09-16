@@ -1,1 +1,39 @@
-<p>add-modal works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Crear nuevo tutorial
+            </button>
+  
+        <!-- Modal -->
+            <div class="modal fade mx-auto" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Nuevo tutorial</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form class="row g-3 mx-auto p-3">
+                            <div class="col-md-6">
+                              <label for="text" class="form-label">Título</label>
+                              <input type="email" class="form-control" id="titulo" placeholder="Título del tutorial">
+                            </div>
+                            <div class="col-md-6">
+                              <label for="text" class="form-label">Foto</label>
+                              <input type="text" class="form-control" id="url" placeholder="URL de la imagen">
+                            </div>
+                            <div class="col-12">
+                              <label for="inputAddress2" class="form-label">Descripción</label>
+                              <input type="text" class="form-control" id="descripcion" placeholder="Descripción del tutorial">
+                            </div>
+                          </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Descartar</button>
+                            <button type="button" class="btn btn-success">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
