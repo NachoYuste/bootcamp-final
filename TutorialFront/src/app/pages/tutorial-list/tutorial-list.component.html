@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
             <div class="col-md-8">
-                <br><h2 class="text-center mx-auto">Listado de tutoriales</h2><br>
+                <br><h2 class="mx-auto">Listado de tutoriales</h2><br>
             </div>
             <div class="col-md-4 text-center">
                 <br><app-add-modal></app-add-modal>
@@ -11,30 +11,12 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row row-cols-3">
-                <div class="col"> <!--*ngFor="let tutorial of tutorials"-->
+                <div class="col" ngFor="let tutorial of tutorials">
                     <div class="card" style="width: 18rem;">
                         <img src="https://static-sevilla.abc.es/media/gurmesevilla/2012/01/comida-rapida-casera.jpg" class="..." alt="">
                         <div class="card-body">
                             <h5 class="card-title">Cómo hacer una American Burger explicado paso a paso</h5>
                             <a [routerLink]="[tutorial.id]" class="btn btn-danger">Ver tutorial</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col"> <!--*ngFor="let tutorial of tutorials"-->
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://static-sevilla.abc.es/media/gurmesevilla/2012/01/comida-rapida-casera.jpg" class="..." alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Cómo hacer una American Burger explicado paso a paso</h5>
-                            <a class="btn btn-danger">Ver tutorial</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col"> <!--*ngFor="let tutorial of tutorials"-->
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://static-sevilla.abc.es/media/gurmesevilla/2012/01/comida-rapida-casera.jpg" class="..." alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Cómo hacer una American Burger explicado paso a paso</h5>
-                            <a class="btn btn-danger">Ver tutorial</a>
                         </div>
                     </div>
                 </div>
