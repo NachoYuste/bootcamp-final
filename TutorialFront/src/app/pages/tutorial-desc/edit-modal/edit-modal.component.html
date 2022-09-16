@@ -15,21 +15,21 @@
             <form class="row g-3">
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Título</label>
-                  <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="tutorial.title" name="tutorial.title" value = {{ tutorial.title }}>
+                  <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="tutorial.title" name="tutorial.title" placeholder={{tutorial.title}}>
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword4" class="form-label">Foto</label>
-                  <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="tutorial.img" name="tutorial.img" value = {{ tutorial.img }}>
+                  <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="tutorial.img" name="tutorial.img" placeholder={{tutorial.img}}>
                 </div>
                 <div class="col-12">
                   <label for="inputAddress" class="form-label">Descripción</label>
-                  <input type="text" class="form-control" id="inputAddress" [(ngModel)]="tutorial.description" name="tutorial.description" value = {{ tutorial.description }}>
+                  <input type="text" class="form-control" id="inputAddress" [(ngModel)]="tutorial.description" name="tutorial.description" placeholder={{tutorial.description}}>
                 </div>
               </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-primary" (click)="editTutorial()">Guardar</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="editTutorial()">Guardar</button>
         </div>
       </div>
     </div>

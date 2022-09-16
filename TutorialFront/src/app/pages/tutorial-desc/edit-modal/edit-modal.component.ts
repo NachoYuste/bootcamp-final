@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouteConfigLoadEnd, Router } from '@angular/router';
 import { Tutorial } from 'src/app/models/tutorial';
 import { TutorialService } from 'src/app/services/tutorial.service';
 
@@ -10,12 +10,18 @@ import { TutorialService } from 'src/app/services/tutorial.service';
 })
 export class EditModalComponent implements OnInit {
 
-  @Input() tutorial : Tutorial = new Tutorial();
+  tutorial : Tutorial = new Tutorial();
 
-  constructor(private tutorialService : TutorialService, route: ActivatedRoute) {}
+  constructor(private tutorialService : TutorialService, public route: ActivatedRoute, public router: Router) {
+    let id = parseInt(route.snapshot.paramMap.get('id')!);
+    this.tutorialService.getTutorial(id).subscribe(data =>{
+      this.tutorial = data;
+    })
+  }
 
   editTutorial(){
     this.tutorialService.editTutorial(this.tutorial).subscribe();
+    this.router.navigate(["/tutorials/"+this.tutorial.id])
   }
 
   ngOnInit(): void {

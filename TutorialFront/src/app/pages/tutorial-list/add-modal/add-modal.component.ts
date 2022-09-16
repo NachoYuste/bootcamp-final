@@ -14,7 +14,6 @@ export class AddModalComponent implements OnInit {
   constructor(private tutorialService: TutorialService, route: ActivatedRoute) {}
 
   addTutorial(){
-    //Add tutorial
     this.tutorialService.addTutorial(this.tutorial).subscribe();
   }
 

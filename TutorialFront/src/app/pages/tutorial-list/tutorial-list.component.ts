@@ -13,10 +13,10 @@ export class TutorialListComponent implements OnInit {
   tutorial: Tutorial = new Tutorial();
 
   constructor(public tutorialService: TutorialService) {
-    //this.tutorials = tutorialService.getTutorials();
+    this.tutorialService.getTutorials().subscribe(data =>{
+      this.tutorials = data;
+    })
   }
-
-  
   
   ngOnInit(): void {
   }

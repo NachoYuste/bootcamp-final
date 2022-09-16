@@ -3,7 +3,7 @@
             <div class="col-md-8">
                 <br><h2 class="mx-auto">Listado de tutoriales</h2><br>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4">
                 <br><app-add-modal></app-add-modal>
             </div>
     </div>
@@ -13,9 +13,9 @@
             <div class="row row-cols-3">
                 <div class="col" *ngFor="let tutorial of tutorials">
                     <div class="card" style="width: 18rem;">
-                        <img src={{ tutorial.img }} class="..." alt="">
+                        <img src={{tutorial.img}} class="..." alt="">
                         <div class="card-body">
-                            <h5 class="card-title">{{ tutorial.title }}</h5>
+                            <h5 class="card-title">{{tutorial.title}}</h5>
                             <a [routerLink]="[tutorial.id]" class="btn btn-danger">Ver tutorial</a>
                         </div>
                     </div>

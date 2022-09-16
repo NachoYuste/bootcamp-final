@@ -15,7 +15,7 @@ export class TutorialService {
   }
 
   getTutorial(id: number){    
-    return this.http.get<Tutorial>('http://localhost:8080/tutorials/{{id}}')
+    return this.http.get<Tutorial>('http://localhost:8080/tutorials/'+id)
   }
 
   addTutorial(tutorial: Tutorial){
@@ -31,11 +31,11 @@ export class TutorialService {
                   "description":tutorial.description,
                   "published":tutorial.published,
                   "img":tutorial.img};
-    return this.http.put('http://localhost:8080/tutorials/{{tutorial.id}}', body);
+    return this.http.put('http://localhost:8080/tutorials/'+tutorial.id, body);
   }
 
   deleteTutorial(tutorial: Tutorial){
-    return this.http.delete('http://localhost:8080/tutorials/{{tutorial.id}}')
+    return this.http.delete('http://localhost:8080/tutorials/'+tutorial.id)
   }
 
 
