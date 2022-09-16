@@ -46,24 +46,38 @@
 -->
 
 <div class="container">
-    <div class="row">
-        <!--COLUMNA IZQUIERDA CON LAS CARDS-->
-        <div class="col-8">
             <!--TITULILLO-->
             <div class="row">
                 <div class="col">
-                    <h2 class="text-center">Listado de tutoriales</h2>
+                    <br>
+                    <h2 class="text-center mx-auto">Listado de tutoriales</h2>
+                </div>
+            </div><br>
+    <div class="row">
+        <!--COLUMNA IZQUIERDA CON LAS CARDS-->
+        <div class="col-8">
+
+            <!--CARDS-->
+            <div class="container text-center">
+                <div class="row row-cols-3">
+                    <!--<div class="col" *ngFor="let tutorial of tutorials">-->
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://static-sevilla.abc.es/media/gurmesevilla/2012/01/comida-rapida-casera.jpg" class="..." alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Cómo hacer una American Burger explicado paso a paso</h5>
+                                <a class="btn btn-danger">Ver tutorial</a>
+                            </div>
+                        </div>
+                    <!--</div>-->
                 </div>
             </div>
-            <div class="row">
-
-            </div>  
-
         </div>
 
         <!--COLUMNA DERECHA CON EL FORMULARIO-->
-        <div class="col-4">
-
+        <div class="col-4 mx-auto">
+            <div class="row">
+                <app-add-modal></app-add-modal>
+            </div>
         </div>
     </div>
 </div>
