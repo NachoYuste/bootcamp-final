@@ -9,17 +9,17 @@ import { TutorialService } from 'src/app/services/tutorial.service';
 })
 export class TutorialListComponent implements OnInit {
 
-  tutorials: Tutorial[];
+  tutorials: Tutorial[] = [];
   tutorial: Tutorial = new Tutorial();
 
   constructor(public tutorialService: TutorialService) {
-    this.tutorials = tutorialService.getTutorials();
+    //this.tutorials = tutorialService.getTutorials();
   }
 
   addTutorial(){
     //Add tutorial
     this.tutorialService.addTutorial(this.tutorial);
-    this.tutorials = this.tutorialService.getTutorials();
+    //this.tutorials = this.tutorialService.getTutorials();
   }
   
   ngOnInit(): void {
