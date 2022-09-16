@@ -16,20 +16,20 @@
                         <form class="row g-3 mx-auto p-3">
                             <div class="col-md-6">
                               <label for="text" class="form-label">Título</label>
-                              <input type="email" class="form-control" id="titulo" placeholder="Título del tutorial">
+                              <input type="email" class="form-control" id="titulo" placeholder="Título del tutorial" [(ngModel)]="tutorial.title" name="tutorial.title">
                             </div>
                             <div class="col-md-6">
                               <label for="text" class="form-label">Foto</label>
-                              <input type="text" class="form-control" id="url" placeholder="URL de la imagen">
+                              <input type="text" class="form-control" id="url" placeholder="URL de la imagen" [(ngModel)]="tutorial.img" name="tutorial.img">
                             </div>
                             <div class="col-12">
                               <label for="inputAddress2" class="form-label">Descripción</label>
-                              <input type="text" class="form-control" id="descripcion" placeholder="Descripción del tutorial">
+                              <input type="text" class="form-control" id="descripcion" placeholder="Descripción del tutorial" [(ngModel)]="tutorial.description" name="tutorial.description">
                             </div>
                           </form>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Descartar</button>
-                            <button type="button" class="btn btn-success">Guardar</button>
+                            <button type="button" class="btn btn-success" (click)="addTutorial()">Guardar</button>
                         </div>
                     </div>
                 </div>
