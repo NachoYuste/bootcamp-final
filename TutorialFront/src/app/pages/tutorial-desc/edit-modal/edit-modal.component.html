@@ -1,1 +1,36 @@
-<p>edit-modal works!</p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+    Editar
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar tutorial</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Título</label>
+                  <input type="text" class="form-control" id="inputEmail4" value = {{ tutorial.title }}>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Foto</label>
+                  <input type="text" class="form-control" id="inputPassword4" value = {{ tutorial.img }}>
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Descripción</label>
+                  <input type="text" class="form-control" id="inputAddress" value = {{ tutorial.description }}>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" (click)="editTutorial()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
