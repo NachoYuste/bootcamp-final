@@ -9,12 +9,12 @@ import { TutorialService } from 'src/app/services/tutorial.service';
 })
 export class TutorialListComponent implements OnInit {
 
-  tutorials: Tutorial[] = [];
-  tutorial: Tutorial = new Tutorial();
+  showedTutorials: Tutorial[] = [];
 
   constructor(public tutorialService: TutorialService) {
-    this.tutorialService.getTutorials().subscribe(data =>{
-      this.tutorials = data;
+    
+    this.tutorialService.getTutorials().subscribe(allTutorials =>{
+      this.showedTutorials = allTutorials;
     })
   }
   

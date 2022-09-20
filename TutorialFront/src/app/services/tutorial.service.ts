@@ -11,7 +11,7 @@ export class TutorialService {
   constructor(private http: HttpClient) { }
 
   getTutorials(){
-    return this.http.get<any>('http://localhost:8080/tutorials')
+    return this.http.get<Tutorial[]>('http://localhost:8080/tutorials')
   }
 
   getTutorial(id: number){    
@@ -19,19 +19,11 @@ export class TutorialService {
   }
 
   addTutorial(tutorial: Tutorial){
-    const body = {"title":tutorial.title,
-                  "description":tutorial.description,
-                  "published":tutorial.published,
-                  "img":tutorial.img};
-    return this.http.post('http://localhost:8080/tutorials', body);
+    return this.http.post('http://localhost:8080/tutorials', tutorial);
   }
 
   editTutorial(tutorial: Tutorial){
-    const body = {"title":tutorial.title,
-                  "description":tutorial.description,
-                  "published":tutorial.published,
-                  "img":tutorial.img};
-    return this.http.put('http://localhost:8080/tutorials/'+tutorial.id, body);
+    return this.http.put('http://localhost:8080/tutorials/'+tutorial.id, tutorial);
   }
 
   deleteTutorial(tutorial: Tutorial){

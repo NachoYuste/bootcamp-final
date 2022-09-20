@@ -14,8 +14,8 @@ export class EditModalComponent implements OnInit {
 
   constructor(private tutorialService : TutorialService, public route: ActivatedRoute, public router: Router) {
     let id = parseInt(route.snapshot.paramMap.get('id')!);
-    this.tutorialService.getTutorial(id).subscribe(data =>{
-      this.tutorial = data;
+    this.tutorialService.getTutorial(id).subscribe(singleTutorial =>{
+      this.tutorial = singleTutorial;
     })
   }
 

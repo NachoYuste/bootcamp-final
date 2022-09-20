@@ -16,16 +16,18 @@ export class TutorialDescComponent implements OnInit {
 
   constructor(public tutorialService: TutorialService, route: ActivatedRoute, public router: Router) {
     let id = parseInt(route.snapshot.paramMap.get('id')!);
-    this.tutorialService.getTutorial(id).subscribe(data =>{
-      this.tutorial = data;
+    
+    this.tutorialService.getTutorial(id).subscribe(singleTutorial =>{
+      this.tutorial = singleTutorial;
     })
   }
 
   deleteTutorial(){
     this.tutorialService.deleteTutorial(this.tutorial).subscribe();
+    
     this.router.navigate(["/tutorials"])
-    this.tutorialService.getTutorials().subscribe(data =>{
-      this.tutorials = data;
+    this.tutorialService.getTutorials().subscribe(allTutorials =>{
+      this.tutorials = allTutorials;
     })
   }
 
